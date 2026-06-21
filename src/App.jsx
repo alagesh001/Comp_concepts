@@ -16,14 +16,14 @@ import AsyncAlarmClock from "./pages/9Aysncsyncbasicexplain";
 import AsyncSyncVisualizer from "./pages/10asyncsyncconcept";
 import OOPClassObject from "./pages/11objectandclass";
 import FunctionMachine from "./pages/12function";
-
+import OOPCarRace from "./pages/13funcinclass";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<FunctionMachine />} />
+        <Route path="/" element={<OOPCarRace />} />
       </Routes>
     </BrowserRouter>
   );
