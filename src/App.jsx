@@ -11,12 +11,19 @@ import DetailedMemorySpaceVisualizer from "./pages/7DetailedMemoryspace";
 
 
 import OperationMemoryVisualizer from "./pages/8operationsworking";
+import AsyncAlarmClock from "./pages/9Aysncsyncbasicexplain";
+
+import AsyncSyncVisualizer from "./pages/10asyncsyncconcept";
+import OOPClassObject from "./pages/11objectandclass";
+import FunctionMachine from "./pages/12function";
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<OperationMemoryVisualizer />} />
+        <Route path="/" element={<FunctionMachine />} />
       </Routes>
     </BrowserRouter>
   );
