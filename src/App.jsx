@@ -19,13 +19,19 @@ import FunctionMachine from "./pages/12function";
 import OOPCarRace from "./pages/13funcinclass";
 import EncapsulationVisualizer from "./pages/14encapsulation";
 import InheritanceDemo from "./pages/15inheritance";
+import ConstructorAndAttributes from "./pages/16constructor&attribute";
+import AbstractionDemo from "./pages/17abstraction";
+import InterfaceDemo from "./pages/18interface1";
+import InterfaceVsInheritance from "./pages/20diff_inherit_interface";
+import PaymentInterfaceDemo from "./pages/19interfaceforcommunication2";
+
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<InheritanceDemo />} />
+        <Route path="/" element={<PaymentInterfaceDemo />} />
       </Routes>
     </BrowserRouter>
   );
