@@ -17,13 +17,15 @@ import AsyncSyncVisualizer from "./pages/10asyncsyncconcept";
 import OOPClassObject from "./pages/11objectandclass";
 import FunctionMachine from "./pages/12function";
 import OOPCarRace from "./pages/13funcinclass";
+import EncapsulationVisualizer from "./pages/14encapsulation";
+import InheritanceDemo from "./pages/15inheritance";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<OOPCarRace />} />
+        <Route path="/" element={<InheritanceDemo />} />
       </Routes>
     </BrowserRouter>
   );
