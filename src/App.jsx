@@ -58,6 +58,11 @@ import DecoratorLab from "./pages/44decorator";
 import ThreadLab from "./pages/45thread";
 import BackgroundProcessing from "./pages/46backgroundprocess";
 import ConditionalLogic from "./pages/47elseifandswitch";
+import LoopVisualizer from "./pages/48loops";
+
+import DSAConceptExplorer from "./pages/49dsa";
+import TimeComplexityVisualizer from "./pages/50timecomplexity";
+import SpaceComplexityVisualizer from "./pages/51spacecomplexity";
 
 
 
@@ -65,7 +70,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ConditionalLogic />} />
+        <Route path="/" element={<SpaceComplexityVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
