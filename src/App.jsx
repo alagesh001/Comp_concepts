@@ -42,12 +42,30 @@ import AccessModifierSimulator from "./pages/30staticpublic";
 import ProtectedSimulator from "./pages/31protected";
 
 import ThisAndSuperSimulator from "./pages/32thisandsuper";
+import SOLIDPrinciplesLab from "./pages/33solidprinciples";
+import SRPLab from "./pages/34srplab";
+import OCPLab from "./pages/35ocblab";
+import LSPLab from "./pages/36lsplab";
+import ISPLab from "./pages/37isplab";
+import DIPLab from "./pages/38diplab";
+
+import SingletonLab from "./pages/39singleton";
+import FactoryMethodLab from "./pages/40factory";
+import BuilderLab from "./pages/41builder";
+import AdapterPaymentLab from "./pages/42adapter";
+import ObserverLab from "./pages/43observer";
+import DecoratorLab from "./pages/44decorator";
+import ThreadLab from "./pages/45thread";
+import BackgroundProcessing from "./pages/46backgroundprocess";
+import ConditionalLogic from "./pages/47elseifandswitch";
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ThisAndSuperSimulator />} />
+        <Route path="/" element={<ConditionalLogic />} />
       </Routes>
     </BrowserRouter>
   );
