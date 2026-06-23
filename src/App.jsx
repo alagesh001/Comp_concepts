@@ -63,6 +63,9 @@ import LoopVisualizer from "./pages/48loops";
 import DSAConceptExplorer from "./pages/49dsa";
 import TimeComplexityVisualizer from "./pages/50timecomplexity";
 import SpaceComplexityVisualizer from "./pages/51spacecomplexity";
+import RecursionVisualizer from "./pages/52recursion";
+import RecursionVsIteration from "./pages/53recursionvsiteration";
+import CallStackVisualizer from "./pages/54callstack";
 
 
 
@@ -70,7 +73,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SpaceComplexityVisualizer />} />
+        <Route path="/" element={<CallStackVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
