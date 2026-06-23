@@ -36,11 +36,18 @@ import AssociationDemo from "./pages/26association";
 import AssociationVsAggregation from "./pages/27AssociationVsAggregation";
 import GarbageCollectorSimulator from "./pages/28garbagecollection";
 
+import DeepVsShallowVisualizer from "./pages/29deepshallowcopy";
+import AccessModifierSimulator from "./pages/30staticpublic";
+
+import ProtectedSimulator from "./pages/31protected";
+
+import ThisAndSuperSimulator from "./pages/32thisandsuper";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<GarbageCollectorSimulator />} />
+        <Route path="/" element={<ThisAndSuperSimulator />} />
       </Routes>
     </BrowserRouter>
   );
