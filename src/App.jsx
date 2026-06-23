@@ -22,16 +22,25 @@ import InheritanceDemo from "./pages/15inheritance";
 import ConstructorAndAttributes from "./pages/16constructor&attribute";
 import AbstractionDemo from "./pages/17abstraction";
 import InterfaceDemo from "./pages/18interface1";
-import InterfaceVsInheritance from "./pages/20diff_inherit_interface";
 import PaymentInterfaceDemo from "./pages/19interfaceforcommunication2";
+import InterfaceVsInheritance from "./pages/20diff_inherit_interface";
 
+import RuntimePolymorphism from "./pages/21runtimepolymorph";
+import CompileTimePolymorphism from "./pages/22compiletimepolymorph";
+import PolymorphismExecution from "./pages/23howpolymorphworks";
+import CompositionAggregation from "./pages/24compositionaggregation";
 
+import CompositionAggregationMemory from "./pages/25compaggregate2";
+import AssociationDemo from "./pages/26association";
+
+import AssociationVsAggregation from "./pages/27AssociationVsAggregation";
+import GarbageCollectorSimulator from "./pages/28garbagecollection";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PaymentInterfaceDemo />} />
+        <Route path="/" element={<GarbageCollectorSimulator />} />
       </Routes>
     </BrowserRouter>
   );

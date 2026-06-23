@@ -82,51 +82,114 @@ payment.pay();`}
       </motion.div>
 
       {/* Implementations */}
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
+<div className="grid md:grid-cols-3 gap-6 mb-8">
 
-        <button
-          onClick={() => setPaymentType("upi")}
-          className={`p-6 rounded-xl ${
-            paymentType === "upi"
-              ? "bg-green-200 ring-4 ring-green-400"
-              : "bg-white"
-          }`}
-        >
-          <Smartphone size={50} />
-          <div className="mt-3">
-            UPI
-          </div>
-        </button>
-
-        <button
-          onClick={() => setPaymentType("card")}
-          className={`p-6 rounded-xl ${
-            paymentType === "card"
-              ? "bg-blue-200 ring-4 ring-blue-400"
-              : "bg-white"
-          }`}
-        >
-          <CreditCard size={50} />
-          <div className="mt-3">
-            Credit Card
-          </div>
-        </button>
-
-        <button
-          onClick={() => setPaymentType("wallet")}
-          className={`p-6 rounded-xl ${
-            paymentType === "wallet"
-              ? "bg-purple-200 ring-4 ring-purple-400"
-              : "bg-white"
-          }`}
-        >
-          <Wallet size={50} />
-          <div className="mt-3">
-            Wallet
-          </div>
-        </button>
-
+  {/* UPI */}
+  <button
+    onClick={() => setPaymentType("upi")}
+    className={`
+      relative overflow-hidden rounded-3xl p-6 text-left
+      transition-all duration-300 transform
+      hover:scale-105 hover:shadow-2xl
+      ${
+        paymentType === "upi"
+          ? "bg-gradient-to-br from-green-500 to-emerald-600 text-white ring-4 ring-green-300 scale-105"
+          : "bg-white shadow-lg"
+      }
+    `}
+  >
+    {paymentType === "upi" && (
+      <div className="absolute top-3 right-3 text-2xl">
+        ✓
       </div>
+    )}
+
+    <Smartphone size={48} />
+
+    <h3 className="text-2xl font-bold mt-4">
+      UPI
+    </h3>
+
+    <p className="mt-2 opacity-80 text-sm">
+      Google Pay, PhonePe, BHIM
+    </p>
+
+    <div className="mt-6 text-sm font-medium">
+      Implements pay()
+    </div>
+  </button>
+
+  {/* Card */}
+  <button
+    onClick={() => setPaymentType("card")}
+    className={`
+      relative overflow-hidden rounded-3xl p-6 text-left
+      transition-all duration-300 transform
+      hover:scale-105 hover:shadow-2xl
+      ${
+        paymentType === "card"
+          ? "bg-gradient-to-br from-blue-500 to-indigo-600 text-white ring-4 ring-blue-300 scale-105"
+          : "bg-white shadow-lg"
+      }
+    `}
+  >
+    {paymentType === "card" && (
+      <div className="absolute top-3 right-3 text-2xl">
+        ✓
+      </div>
+    )}
+
+    <CreditCard size={48} />
+
+    <h3 className="text-2xl font-bold mt-4">
+      Card
+    </h3>
+
+    <p className="mt-2 opacity-80 text-sm">
+      Visa, MasterCard
+    </p>
+
+    <div className="mt-6 text-sm font-medium">
+      Implements pay()
+    </div>
+  </button>
+
+  {/* Wallet */}
+  <button
+    onClick={() => setPaymentType("wallet")}
+    className={`
+      relative overflow-hidden rounded-3xl p-6 text-left
+      transition-all duration-300 transform
+      hover:scale-105 hover:shadow-2xl
+      ${
+        paymentType === "wallet"
+          ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white ring-4 ring-purple-300 scale-105"
+          : "bg-white shadow-lg"
+      }
+    `}
+  >
+    {paymentType === "wallet" && (
+      <div className="absolute top-3 right-3 text-2xl">
+        ✓
+      </div>
+    )}
+
+    <Wallet size={48} />
+
+    <h3 className="text-2xl font-bold mt-4">
+      Wallet
+    </h3>
+
+    <p className="mt-2 opacity-80 text-sm">
+      Paytm, Amazon Pay
+    </p>
+
+    <div className="mt-6 text-sm font-medium">
+      Implements pay()
+    </div>
+  </button>
+
+</div>
 
       {/* Communication */}
       <button
