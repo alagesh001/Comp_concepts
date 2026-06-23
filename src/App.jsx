@@ -66,6 +66,9 @@ import SpaceComplexityVisualizer from "./pages/51spacecomplexity";
 import RecursionVisualizer from "./pages/52recursion";
 import RecursionVsIteration from "./pages/53recursionvsiteration";
 import CallStackVisualizer from "./pages/54callstack";
+import PassByConcept from "./pages/55passbyrefvsvalue";
+import BindingVisualizer from "./pages/56staticvsdynamicbind";
+import LambdaVisualizer from "./pages/57lamda";
 
 
 
@@ -73,7 +76,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CallStackVisualizer />} />
+        <Route path="/" element={<LambdaVisualizer />} />
       </Routes>
     </BrowserRouter>
   );

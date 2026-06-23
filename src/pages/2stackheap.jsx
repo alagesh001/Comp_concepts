@@ -162,7 +162,7 @@ const steps = [
   }
 ];
 
-export default function App() {
+export default function StackHeapExplain() {
   const [step, setStep] = useState(0);
   const [playing, setPlaying] = useState(false);
 
