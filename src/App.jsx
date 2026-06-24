@@ -83,13 +83,26 @@ import DebouncingVisualizer from "./pages/68debouncing";
 import ThrottlingVisualizer from "./pages/69throttling";
 import DebounceVsThrottle from "./pages/70debouncevsthrottle";
 
+//Data Structures
+
+import ArrayMemoryVisualizer from "./pages/71arrays";
+import DynamicArrayVisualizer from "./pages/72dynamicarray";
+
+import LinkedListVisualizer from "./pages/73linkedlist";
+import ArrayVsLinkedList from "./pages/74arrayvslinkedlist";
+import DoublyLinkedListVisualizer from "./pages/75doublylinkedlist";
+import StackVisualizer from "./pages/76stackdatastructure";
+import QueueVisualizer from "./pages/77queue";
+import QueueVsCircularQueue from "./pages/78circularqueue";
+import PriorityQueueVisualizer from "./pages/79priorityqueue";
+
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DebounceVsThrottle />} />
+        <Route path="/" element={<PriorityQueueVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
