@@ -246,7 +246,7 @@ console.log("D");`}
 
               <div className="bg-green-50 p-5 rounded-2xl">
                 <h3 className="font-bold text-xl mb-4">
-                  Callback Queue
+                  Macrotask/Callback Queue
                 </h3>
 
                 {runtimeStep >= 3 && (

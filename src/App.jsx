@@ -77,6 +77,11 @@ import ExecutionContextVisualizer from "./pages/62executioncontext";
 import EventLoopVisualizer from "./pages/63eventloop";
 import CallbackVisualizer from "./pages/64callbackfunctions";
 import PromiseVisualizer from "./pages/65promises";
+import AsyncAwaitInternals from "./pages/66asyncawait";
+import AsyncClosureVisualizer from "./pages/67asyncclosures";
+import DebouncingVisualizer from "./pages/68debouncing";
+import ThrottlingVisualizer from "./pages/69throttling";
+import DebounceVsThrottle from "./pages/70debouncevsthrottle";
 
 
 
@@ -84,7 +89,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PromiseVisualizer />} />
+        <Route path="/" element={<DebounceVsThrottle />} />
       </Routes>
     </BrowserRouter>
   );
