@@ -69,6 +69,14 @@ import CallStackVisualizer from "./pages/54callstack";
 import PassByConcept from "./pages/55passbyrefvsvalue";
 import BindingVisualizer from "./pages/56staticvsdynamicbind";
 import LambdaVisualizer from "./pages/57lamda";
+import ClosureVisualizer from "./pages/58closures";
+import ScopeLifetimeVisualizer from "./pages/59scopeandlifetime";
+import VariableShadowingVisualizer from "./pages/60variableshadowing";
+import HoistingVisualizer from "./pages/61hoisting";
+import ExecutionContextVisualizer from "./pages/62executioncontext";
+import EventLoopVisualizer from "./pages/63eventloop";
+import CallbackVisualizer from "./pages/64callbackfunctions";
+import PromiseVisualizer from "./pages/65promises";
 
 
 
@@ -76,7 +84,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LambdaVisualizer />} />
+        <Route path="/" element={<PromiseVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
