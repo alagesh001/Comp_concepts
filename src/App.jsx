@@ -96,13 +96,21 @@ import QueueVisualizer from "./pages/77queue";
 import QueueVsCircularQueue from "./pages/78circularqueue";
 import PriorityQueueVisualizer from "./pages/79priorityqueue";
 
+import HashMapTeaching from "./pages/80hashmap";
+import HashCollisionVisualizer from "./pages/81hashcollision";
+import SetVisualizer from "./pages/82set";
+import TreeVisualizer from "./pages/83tree";
+import BinaryTreeVisualizer from "./pages/84binarytree";
+import BSTVisualizer from "./pages/85binarysearchtree";
+import HeapVisualizer from "./pages/86heap";
+import TrieVisualizer from "./pages/87trie";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PriorityQueueVisualizer />} />
+        <Route path="/" element={<TrieVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
