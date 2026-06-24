@@ -104,13 +104,17 @@ import BinaryTreeVisualizer from "./pages/84binarytree";
 import BSTVisualizer from "./pages/85binarysearchtree";
 import HeapVisualizer from "./pages/86heap";
 import TrieVisualizer from "./pages/87trie";
+import GraphVisualizer from "./pages/88graph";
+import DirectedVsUndirected from "./pages/89directedandundirectedgraph";
+import DFSMazeVisualizer from "./pages/90dfs";
+import BFSMazeVisualizer from "./pages/91bfs";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TrieVisualizer />} />
+        <Route path="/" element={<BFSMazeVisualizer />} />
       </Routes>
     </BrowserRouter>
   );

@@ -102,7 +102,10 @@ export default function TrieVisualizer() {
         <p className="text-center text-gray-600 mb-8">
           Fast Word Searching
         </p>
-
+<p className="text-center text-gray-600 mb-8 max-w-4xl mx-auto">
+  A Trie (pronounced "try") is a tree-like data structure used to store and search words efficiently. 
+  It stores characters one by one, allowing fast word lookup, prefix matching, and autocomplete suggestions.
+</p>
         {/* Tabs */}
 
         <div className="flex justify-center gap-4 mb-8">
