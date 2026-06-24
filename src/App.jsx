@@ -108,13 +108,18 @@ import GraphVisualizer from "./pages/88graph";
 import DirectedVsUndirected from "./pages/89directedandundirectedgraph";
 import DFSMazeVisualizer from "./pages/90dfs";
 import BFSMazeVisualizer from "./pages/91bfs";
+//Algorithms
 
+
+import LinearSearchVisualizer from "./pages/92linearsearch";
+
+import BinarySearchVisualizer from "./pages/93binarysearch";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BFSMazeVisualizer />} />
+        <Route path="/" element={<BinarySearchVisualizer />} />
       </Routes>
     </BrowserRouter>
   );
