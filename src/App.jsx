@@ -114,12 +114,24 @@ import BFSMazeVisualizer from "./pages/91bfs";
 import LinearSearchVisualizer from "./pages/92linearsearch";
 
 import BinarySearchVisualizer from "./pages/93binarysearch";
+import BubbleSortVisualizer from "./pages/94bubblesort";
+import SelectionSortVisualizer from "./pages/95selectionsort";
+import InsertionSortVisualizer from "./pages/96insertionsort";
+import BubbleVsInsertionSort from "./pages/97bubblevsinsertion";
+
+import MergeSortVisualizer from "./pages/98mergesort";
+import QuickSort from "./pages/99quicksort";
+import GreedyAlgorithm from "./pages/100greedy";
+import DynamicProgrammingComparison from "./pages/101dynamicprogram";
+import Backtracking from "./pages/102backtracking";
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BinarySearchVisualizer />} />
+        <Route path="/" element={<Backtracking />} />
       </Routes>
     </BrowserRouter>
   );
