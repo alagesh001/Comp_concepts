@@ -5,47 +5,47 @@ import { Link } from "react-router-dom";
 import { visualizers } from "../data/visualizers";
 
 const CATEGORY_META = {
-  "Programming Basics": {
+  "1 Programming Basics": {
     icon: "⌨️",
     color: "blue",
     desc: "Variables, functions, loops & core language concepts",
   },
-  "Memory Management": {
+  "2 Memory Management": {
     icon: "🧬",
     color: "violet",
     desc: "Stack, heap, garbage collection & memory layout",
   },
-  "Object Oriented Programming": {
+  "3 Object Oriented Programming": {
     icon: "🏛️",
     color: "indigo",
     desc: "Classes, inheritance, polymorphism & design patterns",
   },
-  "SOLID Principles": {
+  "4 SOLID Principles": {
     icon: "🧱",
     color: "sky",
     desc: "Five principles for clean, maintainable object-oriented code",
   },
-  "Design Patterns": {
+  "5 Design Patterns": {
     icon: "🎨",
     color: "teal",
     desc: "Singleton, Factory, Observer & more reusable solutions",
   },
-  "Concurrency & Async": {
+  "6 Concurrency & Async": {
     icon: "⚡",
     color: "amber",
     desc: "Threads, event loop, promises, debounce & throttle",
   },
-  "DSA Fundamentals": {
+  "7 DSA Fundamentals": {
     icon: "🔬",
     color: "orange",
     desc: "Complexity, recursion, call stack & core theory",
   },
-  "Data Structures": {
+  "8 Data Structures": {
     icon: "🌳",
     color: "emerald",
     desc: "Arrays, trees, graphs, heaps, tries & more",
   },
-  Algorithms: {
+  "9 Algorithms": {
     icon: "🚀",
     color: "rose",
     desc: "Search, sort, DFS, BFS, greedy & dynamic programming",
@@ -93,14 +93,14 @@ export default function Home2() {
           <div className="flex items-center gap-3 mb-5">
             <span className="text-4xl">🧭</span>
             <span className="text-slate-400 text-sm font-medium tracking-widest uppercase">
-              Algorithm Explorer
+              All in 1 Programming Concepts
             </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Learn by seeing it{" "}
+            Solidify {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
-              move.
+              Foundation.
             </span>
           </h1>
 
@@ -114,7 +114,7 @@ export default function Home2() {
             {[
               { value: total, label: "Visualizers", emoji: "🎬" },
               { value: visualizers.length, label: "Categories", emoji: "📂" },
-              { value: "100%", label: "Free & interactive", emoji: "✨" },
+              { value: "100%", label: "Interactive", emoji: "✨" },
             ].map(({ value, label, emoji }) => (
               <div
                 key={label}
