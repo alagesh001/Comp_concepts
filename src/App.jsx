@@ -1,140 +1,46 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Home2 from "./pages/Home2";
-import VariablesMemoryDemo from "./pages/1Variableandmemory";
-import StackHeapExplain from "./pages/2stackheap";
-
-import MemoryConceptVisualizer from "./pages/3othervariables";
-import StringImmutabilityVisualizer from "./pages/4stringimmutable";
-import PrimitiveTypesVisualizer from "./pages/5primitivedatatypes";
-import MemorySpaceVisualizer from "./pages/6memoryspacelay";
-import DetailedMemorySpaceVisualizer from "./pages/7DetailedMemoryspace";
+import {visualizers} from "./data/visualizers";
 
 
-import OperationMemoryVisualizer from "./pages/8operationsworking";
-import AsyncAlarmClock from "./pages/9Aysncsyncbasicexplain";
+export default function App(){
 
-import AsyncSyncVisualizer from "./pages/10asyncsyncconcept";
-import OOPClassObject from "./pages/11objectandclass";
-import FunctionMachine from "./pages/12function";
-import OOPCarRace from "./pages/13funcinclass";
-import EncapsulationVisualizer from "./pages/14encapsulation";
-import InheritanceDemo from "./pages/15inheritance";
-import ConstructorAndAttributes from "./pages/16constructor&attribute";
-import AbstractionDemo from "./pages/17abstraction";
-import InterfaceDemo from "./pages/18interface1";
-import PaymentInterfaceDemo from "./pages/19interfaceforcommunication2";
-import InterfaceVsInheritance from "./pages/20diff_inherit_interface";
+return (
 
-import RuntimePolymorphism from "./pages/21runtimepolymorph";
-import CompileTimePolymorphism from "./pages/22compiletimepolymorph";
-import PolymorphismExecution from "./pages/23howpolymorphworks";
-import CompositionAggregation from "./pages/24compositionaggregation";
+<BrowserRouter>
 
-import CompositionAggregationMemory from "./pages/25compaggregate2";
-import AssociationDemo from "./pages/26association";
+<Routes>
 
-import AssociationVsAggregation from "./pages/27AssociationVsAggregation";
-import GarbageCollectorSimulator from "./pages/28garbagecollection";
-
-import DeepVsShallowVisualizer from "./pages/29deepshallowcopy";
-import AccessModifierSimulator from "./pages/30staticpublic";
-
-import ProtectedSimulator from "./pages/31protected";
-
-import ThisAndSuperSimulator from "./pages/32thisandsuper";
-import SOLIDPrinciplesLab from "./pages/33solidprinciples";
-import SRPLab from "./pages/34srplab";
-import OCPLab from "./pages/35ocblab";
-import LSPLab from "./pages/36lsplab";
-import ISPLab from "./pages/37isplab";
-import DIPLab from "./pages/38diplab";
-
-import SingletonLab from "./pages/39singleton";
-import FactoryMethodLab from "./pages/40factory";
-import BuilderLab from "./pages/41builder";
-import AdapterPaymentLab from "./pages/42adapter";
-import ObserverLab from "./pages/43observer";
-import DecoratorLab from "./pages/44decorator";
-import ThreadLab from "./pages/45thread";
-import BackgroundProcessing from "./pages/46backgroundprocess";
-import ConditionalLogic from "./pages/47elseifandswitch";
-import LoopVisualizer from "./pages/48loops";
-
-import DSAConceptExplorer from "./pages/49dsa";
-import TimeComplexityVisualizer from "./pages/50timecomplexity";
-import SpaceComplexityVisualizer from "./pages/51spacecomplexity";
-import RecursionVisualizer from "./pages/52recursion";
-import RecursionVsIteration from "./pages/53recursionvsiteration";
-import CallStackVisualizer from "./pages/54callstack";
-import PassByConcept from "./pages/55passbyrefvsvalue";
-import BindingVisualizer from "./pages/56staticvsdynamicbind";
-import LambdaVisualizer from "./pages/57lamda";
-import ClosureVisualizer from "./pages/58closures";
-import ScopeLifetimeVisualizer from "./pages/59scopeandlifetime";
-import VariableShadowingVisualizer from "./pages/60variableshadowing";
-import HoistingVisualizer from "./pages/61hoisting";
-import ExecutionContextVisualizer from "./pages/62executioncontext";
-import EventLoopVisualizer from "./pages/63eventloop";
-import CallbackVisualizer from "./pages/64callbackfunctions";
-import PromiseVisualizer from "./pages/65promises";
-import AsyncAwaitInternals from "./pages/66asyncawait";
-import AsyncClosureVisualizer from "./pages/67asyncclosures";
-import DebouncingVisualizer from "./pages/68debouncing";
-import ThrottlingVisualizer from "./pages/69throttling";
-import DebounceVsThrottle from "./pages/70debouncevsthrottle";
-
-//Data Structures
-
-import ArrayMemoryVisualizer from "./pages/71arrays";
-import DynamicArrayVisualizer from "./pages/72dynamicarray";
-
-import LinkedListVisualizer from "./pages/73linkedlist";
-import ArrayVsLinkedList from "./pages/74arrayvslinkedlist";
-import DoublyLinkedListVisualizer from "./pages/75doublylinkedlist";
-import StackVisualizer from "./pages/76stackdatastructure";
-import QueueVisualizer from "./pages/77queue";
-import QueueVsCircularQueue from "./pages/78circularqueue";
-import PriorityQueueVisualizer from "./pages/79priorityqueue";
-
-import HashMapTeaching from "./pages/80hashmap";
-import HashCollisionVisualizer from "./pages/81hashcollision";
-import SetVisualizer from "./pages/82set";
-import TreeVisualizer from "./pages/83tree";
-import BinaryTreeVisualizer from "./pages/84binarytree";
-import BSTVisualizer from "./pages/85binarysearchtree";
-import HeapVisualizer from "./pages/86heap";
-import TrieVisualizer from "./pages/87trie";
-import GraphVisualizer from "./pages/88graph";
-import DirectedVsUndirected from "./pages/89directedandundirectedgraph";
-import DFSMazeVisualizer from "./pages/90dfs";
-import BFSMazeVisualizer from "./pages/91bfs";
-//Algorithms
+<Route path="/" element={<Home2/>}/>
 
 
-import LinearSearchVisualizer from "./pages/92linearsearch";
+{
+visualizers.flatMap(cat=>
 
-import BinarySearchVisualizer from "./pages/93binarysearch";
-import BubbleSortVisualizer from "./pages/94bubblesort";
-import SelectionSortVisualizer from "./pages/95selectionsort";
-import InsertionSortVisualizer from "./pages/96insertionsort";
-import BubbleVsInsertionSort from "./pages/97bubblevsinsertion";
+cat.items.map(
+([name,path,Component])=>
 
-import MergeSortVisualizer from "./pages/98mergesort";
-import QuickSort from "./pages/99quicksort";
-import GreedyAlgorithm from "./pages/100greedy";
-import DynamicProgrammingComparison from "./pages/101dynamicprogram";
-import Backtracking from "./pages/102backtracking";
+<Route
 
+key={path}
 
+path={path}
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Backtracking />} />
-      </Routes>
-    </BrowserRouter>
-  );
+element={<Component/>}
+
+/>
+
+)
+
+)
+
 }
- 
-export default App;
+
+
+</Routes>
+
+</BrowserRouter>
+
+)
+
+}
