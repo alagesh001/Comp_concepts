@@ -1,7 +1,10 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Home2 from "./pages/Home2";
 import {visualizers} from "./data/visualizers";
+import ProtectedRoute from "./pages/protectedroute";
 
+import Login from "./pages/login";
+import SettingsScreen from "./pages/settingScreen";
 
 export default function App(){
 
@@ -10,8 +13,11 @@ return (
 <BrowserRouter>
 
 <Routes>
+<Route path="/" element={<Login/>}/>
+<Route path="/login" element={<Login/>}/>
 
-<Route path="/" element={<Home2/>}/>
+<Route path="/home" element={<Home2/>}/>
+<Route path="/settings" element={<SettingsScreen/>}/>
 
 
 {
@@ -26,7 +32,9 @@ key={path}
 
 path={path}
 
-element={<Component/>}
+element={  <ProtectedRoute>
+          <Component />
+        </ProtectedRoute>}
 
 />
 

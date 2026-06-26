@@ -1,9 +1,12 @@
-import React, { useState, useMemo } from "react";
+import React, { useState,useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { visualizers } from "../data/visualizers";
-
+import { Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 const CATEGORY_META = {
   "1 Programming Basics": {
     icon: "⌨️",
@@ -67,12 +70,225 @@ const COLOR_MAP = {
 export default function Home2() {
   const [search, setSearch] = useState("");
   const [openIndex, setOpenIndex] = useState(null);
+const navigate = useNavigate();
+const storedGym = JSON.parse(localStorage.getItem("gyms"));
+    const apiBase = "https://oxadmedia.online";
+
+const firstGym = storedGym?.[0];
+
+   const [selectedGym, setSelectedGym] = useState(firstGym);
+      const tokenIs = localStorage.getItem("accessToken");
+
+const [accessToken, setAccessToken] = useState(tokenIs);
+const [checking, setChecking] = useState(false);
+const [authErrorMsg, setAuthErrorMsg] = useState("");
+  const [showAuthBlock, setShowAuthBlock] = useState(false);
 
   const total = useMemo(
     () => visualizers.reduce((sum, cat) => sum + cat.items.length, 0),
     []
   );
 
+// useEffect(() => {
+
+//   if (storedGym) {
+//     try {
+//       const parsedGym = firstGym;
+//       setSelectedGym(firstGym);
+//     } catch (err) {
+//       console.error("❌ Invalid gym data in localStorage");
+//       localStorage.removeItem("selectedGymai");
+//     }
+//   }
+
+//   if (token) {
+//     setAccessToken(token);
+//   }
+// }, []);
+// useEffect(() => {
+//   console.log(firstGym.GymId);
+//     console.log(token);
+
+//   const callCheck = async () => {
+
+//     if (firstGym && token) {
+//       await fetchCheck(
+//         firstGym.GymId,
+//         token
+//       );
+//     }
+//   };
+
+//   callCheck();
+// }, []);
+
+const handleNavigation = async (
+  path,
+  gymId = firstGym.GymId,
+  token = tokenIs,
+  retryCount = 0
+) => {
+  const MAX_RETRIES = 1;
+
+  try {
+    setChecking(true);
+    Swal.fire({
+      title: "Visualizer Loading...",
+      text: "Please wait",
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
+
+    const response = await axios.get(
+      `${apiBase}/api/check_tok?gymid=${gymId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    Swal.close();
+
+    if (response.data.success) {
+      navigate(path, {
+        state: { fromHome: true },
+      });
+    }
+
+    else if (
+      response.data.error === 1 &&
+      retryCount < MAX_RETRIES
+    ) {
+
+      Swal.fire({
+        title: "Session Expired",
+        text: "Refreshing login session...",
+        icon: "info",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      const newToken = await refreshAccessToken();
+
+      if (newToken) {
+        return await handleNavigation(
+          path,
+          gymId,
+          newToken,
+          retryCount + 1
+        );
+      }
+
+      Swal.fire({
+        icon: "error",
+        title: "Login Expired",
+        text: "Please login again.",
+        confirmButtonColor: "#d33",
+      });
+
+      // handleLogout();
+    }
+
+    else if (response.data.error === 99) {
+
+      Swal.fire({
+        icon: "warning",
+        title: "Access Denied",
+        text: "Your session has expired. Please login again.",
+        confirmButtonColor: "#d33",
+      });
+
+      // handleLogout();
+    }
+
+    else {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text:
+          response.data.message ||
+          "Unable to verify your account.",
+      });
+    }
+  } catch (err) {
+    Swal.close();
+
+    Swal.fire({
+      icon: "error",
+      title: "Connection Error",
+      text:
+        "Unable to connect to the server. Please check your internet connection.",
+      confirmButtonColor: "#d33",
+    });
+
+    console.error(err);
+  }finally {
+  setChecking(false);
+}
+};
+const refreshAccessToken = async () => {
+  try {
+    const mobile = selectedGym?.mob;
+
+    const res = await axios.post(
+      `${apiBase}/api/refresh-token-ai`,
+      { mob: mobile },
+      { withCredentials: true }
+    );
+
+    if (res.data.success && res.data.access_token) {
+      localStorage.setItem(
+        "accessToken",
+        res.data.access_token
+      );
+
+      return res.data.access_token;
+    }
+
+    if (res.data.error !== 111) {
+      Swal.fire({
+        icon: "warning",
+        title: "Session Expired",
+        text: "Please login again.",
+      });
+
+      // handleLogout();
+      return null;
+    }
+
+    Swal.fire({
+      icon: "error",
+      title: "Server Error",
+      text: "Unable to refresh session.",
+    });
+
+    return null;
+
+  } catch (err) {
+
+    Swal.fire({
+      icon: "error",
+      title: "Network Error",
+      text:
+        "Please check your internet connection.",
+      confirmButtonColor: "#d33",
+    });
+
+    return null;
+  }
+};
+   const handleLogout = () => {
+        localStorage.removeItem("gyms");
+        localStorage.removeItem("selectedGymai");
+    localStorage.setItem("isLoggedInWeb", "false");
+
+        // ✅ Navigate back to login screen
+        navigate("/login", { replace: true });
+    };
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
     return visualizers
@@ -87,6 +303,25 @@ export default function Home2() {
 
   return (
     <div className="min-h-screen bg-slate-100">
+      <button
+  onClick={() => navigate("/settings")}
+  className="
+    fixed
+    top-5
+    right-5
+    z-50
+    p-3
+    bg-white
+    rounded-full
+    shadow-lg
+    border
+    hover:rotate-90
+    transition-all
+    duration-300
+  "
+>
+  <Settings size={22} />
+</button>
       {/* ── Hero ─────────────────────────────────────── */}
       <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 pt-14 pb-16">
         <div className="max-w-5xl mx-auto">
@@ -217,23 +452,68 @@ export default function Home2() {
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className={`${c.bg} border-t ${c.border} px-5 py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2`}>
-                      {category.items.map(([label, path]) => (
-                        <Link
-                          key={path}
-                          to={path}
-                          className={`group bg-white rounded-xl px-4 py-3 flex items-center justify-between gap-2 border border-transparent ring-1 ring-slate-100 ${c.hover} hover:border-transparent hover:ring-2 ${c.ring} transition-all duration-150`}
-                        >
-                          <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">
-                            {label}
-                          </span>
-                          <ArrowRight
-                            size={14}
-                            className={`flex-shrink-0 ${c.accent} opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all`}
-                          />
-                        </Link>
-                      ))}
-                    </div>
+                <div
+className={`${c.bg} border-t ${c.border} px-5 py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2`}
+>
+
+{category.items.map(([label, path]) => (
+
+<button
+
+key={path}
+
+onClick={() => handleNavigation(path)}
+
+className={`
+group 
+bg-white 
+rounded-xl 
+px-4 
+py-3 
+flex 
+items-center 
+justify-between 
+gap-2 
+border 
+border-transparent 
+ring-1 
+ring-slate-100 
+${c.hover}
+hover:border-transparent
+hover:ring-2 
+${c.ring}
+transition-all 
+duration-150
+text-left
+`}
+
+>
+
+<span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">
+
+{label}
+
+</span>
+
+
+<ArrowRight
+size={14}
+className={`
+flex-shrink-0
+${c.accent}
+opacity-0
+group-hover:opacity-100
+group-hover:translate-x-0.5
+transition-all
+`}
+/>
+
+
+</button>
+
+))}
+
+</div>
                   </motion.div>
                 )}
               </AnimatePresence>
