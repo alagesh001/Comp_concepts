@@ -10,7 +10,7 @@ export default function App(){
 
 return (
 
-<BrowserRouter>
+<BrowserRouter basename="/csmodule">
 
 <Routes>
 <Route path="/" element={<Login/>}/>

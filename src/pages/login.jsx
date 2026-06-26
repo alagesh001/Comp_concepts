@@ -198,65 +198,422 @@ const [uniqueId, setDeviceId] = useState(null);
         }
     };
 
-    return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
-            <div className="w-full max-w-xl p-12 bg-white rounded-2xl shadow-xl text-center">
+ return (
+<div className="
+min-h-screen
+flex
+items-center
+justify-center
+bg-gradient-to-br
+from-slate-900
+via-blue-950
+to-purple-950
+p-6
+">
 
-                {showInstallButton && (
-                    <button
-                        onClick={handleInstallClick}
-                        className="mt-6 mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200"
-                    >
-                        Install App
-                        <p className="text-sm mt-1">Version: {version_n}</p>
-                    </button>
-                )}
 
-                <h2 className="text-2xl font-bold text-gray-800">Fitox Gym Admin Panel</h2>
-                <p className="text-gray-600 mt-2">Complete Gym Solution for Owners</p>
+<div className="
+w-full
+max-w-5xl
+grid
+md:grid-cols-2
+gap-8
+bg-white/10
+backdrop-blur-xl
+rounded-3xl
+shadow-2xl
+p-8
+border
+border-white/20
+">
 
-                <div className="mt-6">
-                    <input
-                        type="text"
-                        placeholder="User ID"
-                        value={userId}
-                        onChange={(e) => setUserId(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className="w-full px-4 py-2 mt-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
 
-                    {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
-                    <button
-                        onClick={handleLogin}
-                        className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition"
-                    >
-                        {loading ? "Logging in..." : "Login"}
-                    </button>
+{/* LEFT LEARNING PANEL */}
 
-                    <div className="mt-6">
-                        <p className="text-sm text-gray-600">New Gym Owner?</p>
-                        <button
-                            onClick={() => navigate("/register-screen")}
-                            className="mt-2 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition"
-                        >
-                            Register Your Gym
-                        </button>
-                    </div>
-                </div>
+<div className="
+hidden
+md:flex
+flex-col
+justify-center
+text-white
+p-8
+">
 
-                <p className="text-gray-500 text-sm mt-6">Version {version_n}</p>
-                                <p className="text-gray-500 text-m mt-6">For Support: +91 85955 09389</p>
 
-            </div>
-        </div>
-    );
+<div className="
+text-6xl
+mb-6
+">
+🧠
+</div>
+
+
+<h1 className="
+text-4xl
+font-extrabold
+leading-tight
+">
+
+Learn Programming
+<br/>
+Visually
+
+</h1>
+
+
+<p className="
+mt-5
+text-blue-200
+text-lg
+">
+
+Understand computer concepts through
+
+</p>
+
+
+<div className="space-y-3 mt-6">
+
+  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
+    🚀 Interactive Learning Experience
+  </div>
+
+  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
+    🎯 Visual Concepts & Simulations
+  </div>
+
+  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
+    ⚡ Real-Time Animations & Examples
+  </div>
+
+  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
+    💡 Learn by Exploring and Practicing
+  </div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+{/* LOGIN CARD */}
+
+
+<div className="
+bg-white
+rounded-3xl
+p-8
+shadow-xl
+">
+
+
+<div className="text-center">
+
+
+<div className="
+mx-auto
+w-20
+h-20
+rounded-2xl
+bg-gradient-to-br
+from-blue-500
+to-purple-600
+flex
+items-center
+justify-center
+text-4xl
+shadow-lg
+">
+
+💻
+
+</div>
+
+
+<h2 className="
+mt-5
+text-3xl
+font-bold
+text-gray-800
+">
+
+Code Explorer
+
+</h2>
+
+
+<p className="
+text-gray-500
+mt-2
+">
+
+Interactive Programming Lab
+
+</p>
+
+
+</div>
+
+
+
+
+
+{showInstallButton && (
+
+<button
+
+onClick={handleInstallClick}
+
+className="
+w-full
+mt-6
+py-3
+rounded-xl
+bg-gradient-to-r
+from-indigo-500
+to-purple-600
+text-white
+font-semibold
+shadow-lg
+"
+
+>
+
+🚀 Install Learning App
+
+<div className="text-xs opacity-80">
+
+Version {version_n}
+
+</div>
+
+</button>
+
+)}
+
+
+
+
+
+
+
+<div className="mt-6 space-y-4">
+
+
+
+<div>
+
+<label className="text-sm font-semibold">
+
+Learner ID
+
+</label>
+
+
+<input
+
+type="text"
+
+placeholder="Enter learner ID"
+
+value={userId}
+
+onChange={(e)=>setUserId(e.target.value)}
+
+className="
+mt-1
+w-full
+p-3
+rounded-xl
+border
+focus:ring-2
+focus:ring-blue-500
+outline-none
+"
+
+/>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<label className="text-sm font-semibold">
+
+Password
+
+</label>
+
+
+<input
+
+type="password"
+
+placeholder="Enter password"
+
+value={password}
+
+onChange={(e)=>setPassword(e.target.value)}
+
+className="
+mt-1
+w-full
+p-3
+rounded-xl
+border
+focus:ring-2
+focus:ring-purple-500
+outline-none
+"
+
+/>
+
+
+</div>
+
+
+
+
+
+{error && (
+
+<div className="
+bg-red-50
+text-red-600
+p-3
+rounded-xl
+text-sm
+">
+
+⚠️ {error}
+
+</div>
+
+)}
+
+
+
+
+<button
+
+onClick={handleLogin}
+
+className="
+w-full
+py-3
+rounded-xl
+bg-gradient-to-r
+from-blue-600
+to-purple-700
+text-white
+font-bold
+shadow-lg
+hover:scale-[1.03]
+transition
+"
+
+>
+
+{
+loading
+?
+"Loading..."
+:
+"Enter Learning Lab →"
+}
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+{/* <div className="
+mt-6
+text-center
+">
+
+<p className="text-gray-500 text-sm">
+
+New learner?
+
+</p>
+
+
+<button
+
+onClick={()=>navigate("/register-screen")}
+
+className="
+mt-2
+text-blue-600
+font-semibold
+hover:underline
+"
+
+>
+
+Create Learning Account
+
+</button>
+
+
+</div> */}
+
+
+
+
+
+<div className="
+mt-8
+text-center
+text-xs
+text-gray-400
+">
+
+
+<p>
+
+Version {version_n}
+
+</p>
+
+
+<p>
+
+Need help? +91 81486 02102
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+</div>
+);
 }
 
 export default Login;
