@@ -198,15 +198,15 @@ const [uniqueId, setDeviceId] = useState(null);
         }
     };
 
- return (
+return (
 <div className="
 min-h-screen
 flex
 items-center
 justify-center
 bg-gradient-to-br
-from-slate-900
-via-blue-950
+from-slate-950
+via-indigo-950
 to-purple-950
 p-6
 ">
@@ -214,12 +214,12 @@ p-6
 
 <div className="
 w-full
-max-w-5xl
+max-w-6xl
 grid
 md:grid-cols-2
-gap-8
+gap-10
 bg-white/10
-backdrop-blur-xl
+backdrop-blur-2xl
 rounded-3xl
 shadow-2xl
 p-8
@@ -229,7 +229,9 @@ border-white/20
 
 
 
-{/* LEFT LEARNING PANEL */}
+
+
+{/* LEFT PANEL */}
 
 <div className="
 hidden
@@ -237,59 +239,129 @@ md:flex
 flex-col
 justify-center
 text-white
-p-8
+p-10
 ">
 
 
 <div className="
-text-6xl
-mb-6
+w-24
+h-24
+rounded-3xl
+bg-gradient-to-br
+from-cyan-400
+to-blue-600
+flex
+items-center
+justify-center
+text-5xl
+shadow-xl
+mb-8
 ">
-🧠
+
+🚀
+
 </div>
 
 
+
+
 <h1 className="
-text-4xl
+text-5xl
 font-extrabold
 leading-tight
 ">
 
-Learn Programming
+Build Skills.
 <br/>
-Visually
+
+<span className="
+text-transparent
+bg-clip-text
+bg-gradient-to-r
+from-cyan-400
+to-purple-400
+">
+
+Crack Interviews.
+
+</span>
 
 </h1>
 
 
+
+
 <p className="
 mt-5
-text-blue-200
+text-slate-300
 text-lg
+max-w-md
 ">
 
-Understand computer concepts through
+Interactive programming labs,
+DSA visualizers and interview preparation
+for future developers.
 
 </p>
 
 
-<div className="space-y-3 mt-6">
 
-  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
-    🚀 Interactive Learning Experience
-  </div>
 
-  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
-    🎯 Visual Concepts & Simulations
-  </div>
 
-  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
-    ⚡ Real-Time Animations & Examples
-  </div>
+<div className="space-y-4 mt-8">
 
-  <div className="bg-white/10 p-4 rounded-xl border border-white/10">
-    💡 Learn by Exploring and Practicing
-  </div>
+
+<div className="
+bg-white/10
+rounded-2xl
+p-4
+border
+border-white/10
+">
+
+🧩 Master Programming Fundamentals
+
+</div>
+
+
+
+<div className="
+bg-white/10
+rounded-2xl
+p-4
+border
+border-white/10
+">
+
+⚡ Visual DSA & Algorithm Animations
+
+</div>
+
+
+
+<div className="
+bg-white/10
+rounded-2xl
+p-4
+border
+border-white/10
+">
+
+🎯 Placement Focused Practice
+
+</div>
+
+
+
+<div className="
+bg-white/10
+rounded-2xl
+p-4
+border
+border-white/10
+">
+
+💻 Real Coding Thinking Skills
 
 </div>
 
@@ -300,16 +372,24 @@ Understand computer concepts through
 
 
 
+</div>
 
-{/* LOGIN CARD */}
 
+
+
+
+
+
+
+{/* LOGIN */}
 
 <div className="
 bg-white
 rounded-3xl
 p-8
-shadow-xl
+shadow-2xl
 ">
+
 
 
 <div className="text-center">
@@ -319,10 +399,10 @@ shadow-xl
 mx-auto
 w-20
 h-20
-rounded-2xl
+rounded-3xl
 bg-gradient-to-br
 from-blue-500
-to-purple-600
+to-violet-600
 flex
 items-center
 justify-center
@@ -335,16 +415,18 @@ shadow-lg
 </div>
 
 
+
 <h2 className="
 mt-5
 text-3xl
-font-bold
+font-extrabold
 text-gray-800
 ">
 
-Code Explorer
+Developer Lab
 
 </h2>
+
 
 
 <p className="
@@ -352,12 +434,14 @@ text-gray-500
 mt-2
 ">
 
-Interactive Programming Lab
+Interactive Coding & Interview Platform
 
 </p>
 
 
+
 </div>
+
 
 
 
@@ -375,22 +459,25 @@ mt-6
 py-3
 rounded-xl
 bg-gradient-to-r
-from-indigo-500
-to-purple-600
+from-cyan-500
+to-blue-600
 text-white
-font-semibold
+font-bold
 shadow-lg
+hover:scale-[1.02]
+transition
 "
 
 >
 
-🚀 Install Learning App
+📲 Install Learning App
 
 <div className="text-xs opacity-80">
 
 Version {version_n}
 
 </div>
+
 
 </button>
 
@@ -401,16 +488,19 @@ Version {version_n}
 
 
 
-
-<div className="mt-6 space-y-4">
+<div className="mt-7 space-y-5">
 
 
 
 <div>
 
-<label className="text-sm font-semibold">
+<label className="
+text-sm
+font-semibold
+text-gray-700
+">
 
-Learner ID
+Student ID
 
 </label>
 
@@ -419,25 +509,25 @@ Learner ID
 
 type="text"
 
-placeholder="Enter learner ID"
+placeholder="Enter your ID"
 
 value={userId}
 
 onChange={(e)=>setUserId(e.target.value)}
 
 className="
-mt-1
+mt-2
 w-full
-p-3
+p-3.5
 rounded-xl
 border
+border-gray-200
+outline-none
 focus:ring-2
 focus:ring-blue-500
-outline-none
 "
 
 />
-
 
 </div>
 
@@ -445,9 +535,15 @@ outline-none
 
 
 
+
 <div>
 
-<label className="text-sm font-semibold">
+
+<label className="
+text-sm
+font-semibold
+text-gray-700
+">
 
 Password
 
@@ -465,20 +561,23 @@ value={password}
 onChange={(e)=>setPassword(e.target.value)}
 
 className="
-mt-1
+mt-2
 w-full
-p-3
+p-3.5
 rounded-xl
 border
+border-gray-200
+outline-none
 focus:ring-2
 focus:ring-purple-500
-outline-none
 "
 
 />
 
 
 </div>
+
+
 
 
 
@@ -503,33 +602,38 @@ text-sm
 
 
 
+
+
+
 <button
 
 onClick={handleLogin}
 
 className="
 w-full
-py-3
+py-3.5
 rounded-xl
 bg-gradient-to-r
-from-blue-600
+from-indigo-600
 to-purple-700
 text-white
 font-bold
-shadow-lg
+shadow-xl
 hover:scale-[1.03]
 transition
 "
 
 >
 
+
 {
 loading
 ?
-"Loading..."
+"Preparing Lab..."
 :
-"Enter Learning Lab →"
+"Start Learning →"
 }
+
 
 </button>
 
@@ -541,40 +645,6 @@ loading
 
 
 
-
-
-
-{/* <div className="
-mt-6
-text-center
-">
-
-<p className="text-gray-500 text-sm">
-
-New learner?
-
-</p>
-
-
-<button
-
-onClick={()=>navigate("/register-screen")}
-
-className="
-mt-2
-text-blue-600
-font-semibold
-hover:underline
-"
-
->
-
-Create Learning Account
-
-</button>
-
-
-</div> */}
 
 
 
@@ -597,7 +667,7 @@ Version {version_n}
 
 <p>
 
-Need help? +91 81486 02102
+Support : +91 81486 02102
 
 </p>
 
@@ -606,11 +676,16 @@ Need help? +91 81486 02102
 
 
 
-</div>
-
-
 
 </div>
+
+
+
+
+
+
+</div>
+
 
 </div>
 );

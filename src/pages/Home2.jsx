@@ -164,13 +164,13 @@ const handleNavigation = async (
       retryCount < MAX_RETRIES
     ) {
 
-      Swal.fire({
-        title: "Session Expired",
-        text: "Refreshing login session...",
-        icon: "info",
-        timer: 1500,
-        showConfirmButton: false,
-      });
+      // Swal.fire({
+      //   title: "Session Expired",
+      //   text: "Refreshing login session...",
+      //   icon: "info",
+      //   timer: 1500,
+      //   showConfirmButton: false,
+      // });
 
       const newToken = await refreshAccessToken();
 
@@ -323,48 +323,174 @@ const refreshAccessToken = async () => {
   <Settings size={22} />
 </button>
       {/* ── Hero ─────────────────────────────────────── */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 pt-14 pb-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-4xl">🧭</span>
-            <span className="text-slate-400 text-sm font-medium tracking-widest uppercase">
-              All in 1 Programming Concepts
-            </span>
-          </div>
+   <div className="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 px-6 pt-14 pb-16">
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            Solidify {" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
-              Foundation.
-            </span>
-          </h1>
+  <div className="max-w-5xl mx-auto">
 
-          <p className="text-slate-400 text-lg max-w-xl mb-10">
-            Interactive visualizers for programming concepts, data structures,
-            and algorithms — from first principles to advanced patterns.
+
+    <div className="flex items-center gap-3 mb-5">
+
+      <span className="text-4xl">
+        🚀
+      </span>
+
+      <span className="
+        text-indigo-300
+        text-sm
+        font-semibold
+        tracking-widest
+        uppercase
+      ">
+        Placement Accelerator Lab
+      </span>
+
+    </div>
+
+
+
+
+    <h1 className="
+      text-4xl
+      md:text-5xl
+      font-extrabold
+      text-white
+      leading-tight
+      mb-4
+    ">
+
+      Master Concepts.
+      <br/>
+
+      <span className="
+        text-transparent
+        bg-clip-text
+        bg-gradient-to-r
+        from-cyan-400
+        via-blue-400
+        to-violet-500
+      ">
+        Crack Interviews.
+      </span>
+
+    </h1>
+
+
+
+
+
+    <p className="
+      text-slate-300
+      text-lg
+      max-w-2xl
+      mb-10
+    ">
+
+      Interactive programming visualizers, DSA animations,
+      coding patterns, and interview preparation tools
+      designed to build job-ready developers.
+
+    </p>
+
+
+
+
+
+    {/* Stats */}
+
+    <div className="flex gap-4 flex-wrap">
+
+
+      {[
+        {
+          value: total,
+          label:"Concept Labs",
+          emoji:"🧩"
+        },
+
+        {
+          value: visualizers.length,
+          label:"DSA Modules",
+          emoji:"⚡"
+        },
+
+        {
+          value:"100%",
+          label:"Interactive",
+          emoji:"🎮"
+        },
+
+        {
+          value:"Placement",
+          label:"Focused",
+          emoji:"🎯"
+        }
+
+      ].map(({value,label,emoji})=>(
+
+
+      <div
+
+      key={label}
+
+      className="
+      bg-white/10
+      border
+      border-white/10
+      backdrop-blur-xl
+      rounded-2xl
+      px-5
+      py-4
+      flex
+      items-center
+      gap-3
+      hover:bg-white/20
+      transition
+      "
+
+      >
+
+
+        <span className="text-2xl">
+          {emoji}
+        </span>
+
+
+        <div>
+
+          <p className="
+            text-white
+            font-bold
+            text-xl
+          ">
+            {value}
           </p>
 
-          {/* Stats row */}
-          <div className="flex gap-4 flex-wrap">
-            {[
-              { value: total, label: "Visualizers", emoji: "🎬" },
-              { value: visualizers.length, label: "Categories", emoji: "📂" },
-              { value: "100%", label: "Interactive", emoji: "✨" },
-            ].map(({ value, label, emoji }) => (
-              <div
-                key={label}
-                className="bg-white/10 backdrop-blur rounded-2xl px-5 py-4 flex items-center gap-3"
-              >
-                <span className="text-2xl">{emoji}</span>
-                <div>
-                  <p className="text-white font-bold text-xl leading-none">{value}</p>
-                  <p className="text-slate-400 text-sm mt-0.5">{label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+
+          <p className="
+            text-slate-400
+            text-sm
+          ">
+            {label}
+          </p>
+
+
         </div>
+
+
       </div>
+
+
+      ))}
+
+
+    </div>
+
+
+
+
+  </div>
+
+</div>
 
       {/* ── Search ───────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-6 -mt-6 mb-10 relative z-10">
