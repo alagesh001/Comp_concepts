@@ -128,6 +128,11 @@ import GreedyAlgorithm from "../pages/100greedy";
 import DynamicProgrammingComparison from "../pages/101dynamicprogram";
 import Backtracking from "../pages/102backtracking";
 
+//AI
+import SpamFilterDemo from "../pages/103aiintro";
+import AStarVisualizer from "../pages/104searchalgo";
+import InterviewMCQ from "../pages/question1";
+
 
 export const visualizers = [
 
@@ -284,6 +289,24 @@ export const visualizers = [
       ["11 Greedy",                  "/greedy",        GreedyAlgorithm],
       ["12 Dynamic Programming",     "/dp",            DynamicProgrammingComparison],
       ["13 Backtracking",            "/backtracking",  Backtracking],
+    ],
+  },
+  
+  // {
+  //   category: "10 AI",
+  //   items: [
+  //     ["1 AI Intro",                     "/aiintro",           SpamFilterDemo],
+  //           ["2 Search Algorithms",                     "/aisearch",           AStarVisualizer],
+
+     
+  //   ],
+  // },
+  {
+    category: "10 Test Series",
+    items: [
+      ["1 Test A",                     "/test1",           InterviewMCQ],
+
+     
     ],
   },
 

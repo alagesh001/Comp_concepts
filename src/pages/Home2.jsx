@@ -409,7 +409,7 @@ const refreshAccessToken = async () => {
 
         {
           value: visualizers.length,
-          label:"DSA Modules",
+          label:"Modules",
           emoji:"⚡"
         },
 
