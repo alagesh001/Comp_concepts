@@ -16,15 +16,15 @@ import {
 import { interviewQuestions } from "../data/indesqns";
 
 export default function InterviewMCQ() {
-  // const questions = useMemo(
-  //   () => [...interviewQuestions].sort(() => Math.random() - 0.5),
-  //   []
-  // );
-const questions = useMemo(() => {
-  return [...interviewQuestions]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 20);
-}, []);
+  const questions = useMemo(
+    () => [...interviewQuestions].sort(() => Math.random() - 0.5),
+    []
+  );
+// const questions = useMemo(() => {
+//   return [...interviewQuestions]
+//     .sort(() => Math.random() - 0.5)
+//     .slice(0, 20);
+// }, []);
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
   const [submitted, setSubmitted] = useState(false);

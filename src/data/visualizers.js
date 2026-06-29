@@ -304,7 +304,7 @@ export const visualizers = [
   {
     category: "10 Test Series",
     items: [
-      ["1 Test A",                     "/test1",           InterviewMCQ],
+      ["1 Full Test",                     "/test1",           InterviewMCQ],
 
      
     ],
