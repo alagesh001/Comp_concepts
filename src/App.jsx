@@ -5,6 +5,8 @@ import ProtectedRoute from "./pages/protectedroute";
 
 import Login from "./pages/login";
 import SettingsScreen from "./pages/settingScreen";
+import Homepage from "./homepage";
+import ValuesTypesOperators from "./javascriptpages/Chapter1";
 
 export default function App(){
 
@@ -16,8 +18,9 @@ return (
 <Route path="/" element={<Login/>}/>
 <Route path="/login" element={<Login/>}/>
 
-<Route path="/home" element={<Home2/>}/>
+<Route path="/home" element={<Homepage/>}/>
 <Route path="/settings" element={<SettingsScreen/>}/>
+<Route path="/javascript" element={<ValuesTypesOperators/>}/>
 
 
 {
